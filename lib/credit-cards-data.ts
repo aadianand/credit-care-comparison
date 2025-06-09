@@ -1,3 +1,5 @@
+import { getCreditCardImage } from "./credit-card-images"
+
 export interface CreditCard {
   id: string
   name: string
@@ -67,7 +69,7 @@ export const creditCards: CreditCard[] = [
       "Reward points never expire",
       "Comprehensive insurance coverage",
     ],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center",
+    image: getCreditCardImage("hdfc-regalia"),
     rating: 4.2,
     priceHistory: [
       { date: "2024-01", annualFee: 2500, offer: "Standard pricing" },
@@ -110,7 +112,7 @@ export const creditCards: CreditCard[] = [
       "Priority customer service",
       "Exclusive lifestyle benefits",
     ],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&crop=center",
+    image: getCreditCardImage("axis-magnus"),
     rating: 4.5,
     priceHistory: [
       { date: "2024-01", annualFee: 12500, offer: "Standard pricing" },
@@ -153,7 +155,7 @@ export const creditCards: CreditCard[] = [
       "Wide acceptance",
       "Easy application process",
     ],
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=250&fit=crop&crop=center",
+    image: getCreditCardImage("sbi-cashback"),
     rating: 4.0,
     priceHistory: [
       { date: "2024-01", annualFee: 999, offer: "First year free" },
@@ -196,7 +198,7 @@ export const creditCards: CreditCard[] = [
       "Amazon Pay integration",
       "Easy reward redemption",
     ],
-    image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=400&h=250&fit=crop&crop=center",
+    image: getCreditCardImage("icici-amazon-pay"),
     rating: 4.3,
     priceHistory: [
       { date: "2024-01", annualFee: 0, offer: "Lifetime free" },
@@ -239,7 +241,7 @@ export const creditCards: CreditCard[] = [
       "Mobile-first experience",
       "Quick approval process",
     ],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center&sat=-100",
+    image: getCreditCardImage("kotak-811"),
     rating: 3.8,
     priceHistory: [
       { date: "2024-01", annualFee: 500, offer: "Fee waiver on ₹50K spend" },
@@ -282,7 +284,7 @@ export const creditCards: CreditCard[] = [
       "Travel insurance coverage",
       "Concierge services",
     ],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&crop=center&hue=60",
+    image: getCreditCardImage("yes-first-exclusive"),
     rating: 4.1,
     priceHistory: [
       { date: "2024-01", annualFee: 2999, offer: "Standard pricing" },

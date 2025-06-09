@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -90,11 +91,19 @@ export function CreditCardGrid({ cards }: CreditCardGridProps) {
               </CardHeader>
 
               <CardContent className="space-y-4">
-                <img
-                  src={card.image || "/placeholder.svg"}
-                  alt={card.name}
-                  className="w-full h-32 object-cover rounded-lg bg-gradient-to-r from-blue-500 to-purple-600"
-                />
+                <div className="relative w-full h-32 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600">
+                  <Image
+                    src={card.image || "/placeholder.svg"}
+                    alt={card.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder.svg?height=128&width=320"
+                    }}
+                  />
+                </div>
 
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">

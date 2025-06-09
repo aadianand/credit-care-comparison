@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -60,11 +61,13 @@ export function CreditCardModal({ card, isOpen, onClose }: CreditCardModalProps)
           <Card>
             <CardContent className="pt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <img
+                <div className="relative w-full h-48 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600">
+                  <Image
                     src={card.image || "/placeholder.svg"}
                     alt={card.name}
-                    className="w-full h-48 object-cover rounded-lg"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement
                       target.src = "/placeholder.svg?height=200&width=320"

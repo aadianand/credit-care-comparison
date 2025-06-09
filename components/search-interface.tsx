@@ -46,15 +46,15 @@ export function SearchInterface() {
     try {
       const searchResults = await searchCreditCards(searchQuery)
       setResults(searchResults)
-    } catch (error) {
-      console.error("Search failed:", error)
+    } catch (searchError) {
+      console.error("Search failed:", searchError)
       setError("Search failed. Using fallback search functionality.")
 
       // Still try to provide results using fallback
       try {
         const fallbackResults = await searchCreditCards(searchQuery)
         setResults(fallbackResults)
-      } catch (fallbackError) {
+      } catch {
         setError("Unable to perform search. Please try again.")
       }
     } finally {
